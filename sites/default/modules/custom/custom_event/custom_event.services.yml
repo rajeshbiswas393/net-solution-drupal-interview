@@ -1,0 +1,5 @@
+services:
+  custom_event.commands:
+    class: \Drupal\custom_event\Commands\CustomDrushCommand
+    tags:
+      - { name: drush.command }

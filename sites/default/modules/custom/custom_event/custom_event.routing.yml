@@ -1,0 +1,7 @@
+custom_event.event_form:
+  path: '/create-event'
+  defaults:
+   _title: 'Create an event'
+   _form: '\Drupal\custom_event\Form\EventForm'
+  requirements:
+   _permission: 'access content'

@@ -1,0 +1,23 @@
+<?php
+use \Drupal\Core\Database\Database;
+  function custom_event_node_insert($node) {
+
+    $node_type = $node->bundle();
+          if($node_type=='event')
+          {
+             $con = Database::getConnection();
+              $con->insert('event_notification_tracker')
+            ->fields([
+            'id'      => 0,
+            'nid'       => $node->id(),
+            'node_type' =>$node_type,
+            'created'   => date('Y-m-d G:i:s'),
+            'updated'   => date('Y-m-d G:i:s'),
+            'status'    =>0
+            ])
+            ->execute();
+          }
+         
+      
+}
+
